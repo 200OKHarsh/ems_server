@@ -10,7 +10,9 @@
         {
             "src": "/(.*)",
             "dest": "app.js",
-            "headers": [
+        }
+    ],
+                "headers": [
     {
       "source": "/(.*)",
       "headers": [
@@ -21,6 +23,4 @@
       ]
     }
   ]
-        }
-    ]
 }
