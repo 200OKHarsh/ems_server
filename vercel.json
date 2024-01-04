@@ -11,11 +11,16 @@
             "src": "/(.*)",
             "dest": "app.js",
             "headers": [
-                {
-                  "key": "access-control-allow-origin",
-                  "value": "*"
-                }
-              ]
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "access-control-allow-origin",
+          "value": "*"
+        }
+      ]
+    }
+  ]
         }
     ]
 }
