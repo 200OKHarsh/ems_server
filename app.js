@@ -22,14 +22,8 @@ app.use((req, res, next) => {
   //   'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
   // );
   // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    res.setHeader('Access-Control-Allow-Credentials', true);
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
