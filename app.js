@@ -14,25 +14,23 @@ app.use(bodyParser.json());
 
 app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
-const cors = require('cors');
 
 const corsOptions = {
   origin: 'https://ems-frontend-2i8vkgyl2-200ok-harshs-projects.vercel.app',
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-app.use(cors(corsOptions));
 
-// app.use((req, res, next) => {
-//   res.setHeader('Access-Control-Allow-Credentials', true);
-//   res.setHeader('Access-Control-Allow-Origin', '*');
-//    res.setHeader(
-//     'Access-Control-Allow-Headers',
-//     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-//   );
-//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+   res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+  next();
+});
 
 app.use('/api/users', userRoutes);
 app.use('/api/leave', leaveRoutes);
