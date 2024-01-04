@@ -68,7 +68,7 @@ const getLeaveByUserId = async (req, res, next) => {
   }
     
   res.status(200).json({
-    allLeaves: userLeaves.leaves.map((leave) => leave.toObject({ getters: true })),
+    allLeaves: userLeaves.map((leave) => leave.toObject({ getters: true })),
   });
 };
 
